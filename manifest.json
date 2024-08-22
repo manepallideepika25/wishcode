@@ -1,0 +1,46 @@
+{
+  "manifest_version": 3,
+  "name": "Your Chrome Extension Name",
+  "version": "0.1",
+  "author": "Priya",
+  "description": "Chrome for bookmarking to-do problems on leetcode",
+  "permissions": [
+    "storage",
+    "tabs"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://leetcode.com/problems/two-sum/"     
+      ],
+      "js": [
+        "content.js"
+      ]
+    }
+  ],
+  
+
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "assets/bookmark.png",
+        "assets/play.png",
+        "assets/delete.png",
+        "assets/save.png"
+      ],
+      "matches":["<all_urls>"]
+    }
+  ],
+  
+  
+
+  "action": {
+    "default_icon": {
+      "16":"assets/ext-icon.png",
+      "32":"assets/ext-icon.png",
+      "64":"assets/ext-icon.png"
+    },
+    "default_popup": "popup.html",
+    "default_title": "To-do problems"
+  }
+}
